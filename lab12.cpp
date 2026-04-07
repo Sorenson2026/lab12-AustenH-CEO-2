@@ -7,14 +7,20 @@
 
 using namespace std;
 
+const int rowSize = 5;
+
 // Function Prototypes here
 void fillArray(int[][6], int);
+void printArray(int[][6], int);
+void printTotals(int[][6], int);
 
 // Main will call a function for filling arrays, printing arrays, and printing totals.
 int main()
 {
 	int numbers[5][6];
-	fillArray(numbers, 5);
+	fillArray(numbers, rowSize);
+	cout << "Display array" << endl;
+	printArray(numbers, rowSize);
 	return 0;
 }
 
@@ -29,4 +35,28 @@ void fillArray(int fill[][6], int size)
 			cin >> fill[r][c];
 		}
 	}
+}
+
+void printArray(int print[][6], int rsize)
+{
+	cout << right;
+	for (int r = 0; r < rsize; r++)
+	{
+		for (int c = 0; c < 6; c++)
+		{
+			cout << setw(5) << print[r][c];
+		}
+		cout << endl;
+	}
+	for (int l = 0; l < 30; l++)
+		cout << "-";
+	cout << endl;
+}
+
+// Print totals will print the sum of each column of the array.
+void printTotals(int[][6], int)
+{
+
+
+
 }

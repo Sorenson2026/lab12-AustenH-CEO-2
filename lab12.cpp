@@ -17,10 +17,12 @@ void printTotals(int[][6], int);
 // Main will call a function for filling arrays, printing arrays, and printing totals.
 int main()
 {
+	cout << "Welcome to my macro tuff exite program" << endl;
 	int numbers[5][6];
 	fillArray(numbers, rowSize);
-	cout << "Display array" << endl;
+	cout << "Display array: " << endl;
 	printArray(numbers, rowSize);
+	printTotals(numbers, rowSize);
 	return 0;
 }
 
@@ -37,10 +39,11 @@ void fillArray(int fill[][6], int size)
 	}
 }
 
-void printArray(int print[][6], int rsize)
+// Print array will print and format the contents of the array
+void printArray(int print[][6], int rSize)
 {
 	cout << right;
-	for (int r = 0; r < rsize; r++)
+	for (int r = 0; r < rSize; r++)
 	{
 		for (int c = 0; c < 6; c++)
 		{
@@ -54,9 +57,14 @@ void printArray(int print[][6], int rsize)
 }
 
 // Print totals will print the sum of each column of the array.
-void printTotals(int[][6], int)
+void printTotals(int totals[][6], int rSize)
 {
-
-
-
+	int total;
+	for (int c = 0; c < 6; c++)
+	{
+		total = 0;
+		for (int r = 0; r < rSize; r++)
+			total += totals[r][c];
+		cout << setw(5) << total;
+	}
 }
